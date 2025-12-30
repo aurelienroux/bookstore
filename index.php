@@ -12,6 +12,12 @@ $looking = isset($_GET['title']) || isset($_GET['author']);
   <title>Bookstore</title>
 </head>
 
+<nav>
+  <a href="/">Home</a>
+  <a href="/login.html">Login</a>
+  <a href="/authenticate.php">Auth</a>
+</nav>
+
 <body>
   <p><?php echo loginMessage(); ?></p>
 

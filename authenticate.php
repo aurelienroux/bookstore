@@ -8,6 +8,12 @@ if ($submitted) {
 <!DOCTYPE html>
 <html lang="en">
 
+<nav>
+  <a href="/">Home</a>
+  <a href="/login.html">Login</a>
+  <a href="/authenticate.php">Auth</a>
+</nav>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
