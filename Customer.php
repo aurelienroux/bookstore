@@ -6,10 +6,19 @@ class Customer
   private $firstname;
   private $surname;
   private $email;
+  private static $lastId = 0;
 
   public function __construct(int $id, string $firstname, string $surname, string $email)
   {
-    $this->id = $id;
+    if ($id == null) {
+      $this->id = ++self::$lastId;
+    } else {
+      $this->id = $id;
+      if ($id > self::$lastId) {
+        self::$lastId = $id;
+      }
+    }
+
     $this->firstname = $firstname;
     $this->surname = $surname;
     $this->email = $email;
@@ -38,5 +47,11 @@ class Customer
   public function setEmail(string $email): void
   {
     $this->email = $email;
+  }
+
+  // echo Customer::getLastId();
+  public static function getLastId(): int
+  {
+    return self::$lastId;
   }
 }
