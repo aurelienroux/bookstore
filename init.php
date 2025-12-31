@@ -1,8 +1,5 @@
 <?php
 
-use Bookstore\Domain\Book;
-use Bookstore\Domain\Customer;
-
 function autoloader($classname)
 {
   $lastSlash = strpos($classname, '\\') + 1;

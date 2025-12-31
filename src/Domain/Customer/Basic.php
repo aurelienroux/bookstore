@@ -3,8 +3,10 @@
 namespace Bookstore\Domain\Customer;
 
 use Bookstore\Domain\Customer;
+use Bookstore\Domain\Payer;
+use Bookstore\Domain\Person;
 
-class Basic extends Customer
+class Basic extends Person implements Customer, Payer
 {
   public function getMonthlyFee(): float
   {
@@ -19,5 +21,15 @@ class Basic extends Customer
   public function getType(): string
   {
     return 'Basic';
+  }
+
+  public function pay(float $amount)
+  {
+    echo "Paying amount";
+  }
+
+  public function isExtentOfTaxes(): bool
+  {
+    return false;
   }
 }
