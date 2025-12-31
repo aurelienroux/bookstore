@@ -4,11 +4,11 @@ namespace Bookstore\Exceptions;
 
 use Exception;
 
-class InvalidIdException extends Exception
+class ExceededMaxAllowedException extends Exception
 {
   public function __construct($message = null)
   {
-    $message = $message ?: 'Invalid id provided.';
+    $message = $message ?: "Exceeded max allowed.";
     parent::__construct($message);
   }
 }

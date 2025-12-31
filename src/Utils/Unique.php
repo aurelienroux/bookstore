@@ -2,6 +2,7 @@
 
 namespace Bookstore\Utils;
 
+use Bookstore\Exceptions\ExceededMaxAllowedException;
 use Bookstore\Exceptions\InvalidIdException;
 
 trait Unique
@@ -22,6 +23,9 @@ trait Unique
         if ($id > self::$lastId) {
           self::$lastId = $id;
         }
+      }
+      if ($this->id > 50) {
+        throw new ExceededMaxAllowedException('Max number of users is 50.');
       }
     } catch (\Exception $e) {
       echo $e->getMessage();
